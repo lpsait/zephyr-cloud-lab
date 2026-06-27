@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "uk.co.zephyrcloudlab.twa",
+        "sha256_cert_fingerprints": ["D8:17:16:18:FC:74:91:13:B1:A0:94:9B:1E:B7:21:BD:14:34:E1:A1:DB:1A:AD:12:03:FD:35:48:E7:8F:E1:F3"]
+      }
+    }]
