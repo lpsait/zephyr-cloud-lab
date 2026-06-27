@@ -1,0 +1,29 @@
+{
+  "background_color": "#7b61ff",
+  "description": "Zephyr Cloud Lab — help Zephyr the scientist dragon sort your worry clouds. Free worry-sorting tool for children aged 5-10. No signup, works on any device.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Zephyr Cloud Lab",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Zephyr",
+  "start_url": "/zephyrcloudlab.co.uk",
+  "theme_color": "#e8f4fb",
+  "icons": [
+    {
+      "src": "https://zephyrcloudlab.co.uk/icon-192.png",
+      "type": "image/png",
+      "sizes": "32x32",
+      "isSquare": true,
+      "isPng": true,
+      "isWebp": false,
+      "isJpg": false,
+      "width": 32,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
+    }
+  ],
+  "id": "zephyrcloudlab",
+  "lang": "en"
+}
