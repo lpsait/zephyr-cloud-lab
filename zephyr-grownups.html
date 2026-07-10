@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grown-up's Guide — Zephyr Cloud Lab</title>
+<meta name="description" content="Everything parents and carers need to know about Zephyr Cloud Lab — what it does, what it doesn't do, and how to support your child.">
+<link rel="icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Nunito', sans-serif; background: #F5F4FF; color: #2D2840; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 600px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+  /* Nav */
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; max-width: 600px; margin: 0 auto; }
+  .nav-brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .nav-logo { width: 32px; height: 32px; object-fit: contain; }
+  .nav-name { font-size: 15px; font-weight: 800; color: #2D2840; }
+  .nav-back { font-size: 13px; font-weight: 600; color: #7B61FF; text-decoration: none; }
+
+  /* Hero */
+  .hero { text-align: center; padding: 2rem 0 2.5rem; }
+  .hero-emoji { font-size: 56px; margin-bottom: 1rem; display: block; }
+  .hero h1 { font-family: 'DM Serif Display', serif; font-size: 2rem; font-weight: 400; color: #2D2840; margin-bottom: 0.75rem; letter-spacing: -0.02em; line-height: 1.2; }
+  .hero p { font-size: 14px; color: #7A7670; font-weight: 400; line-height: 1.7; max-width: 420px; margin: 0 auto; }
+
+  /* Sections */
+  .section { margin-bottom: 1.5rem; }
+  .section-card { background: #fff; border-radius: 14px; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.07); }
+  .section-title { font-size: 16px; font-weight: 800; color: #2D2840; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px; }
+  .section-body { font-size: 13px; color: #7A7670; font-weight: 400; line-height: 1.7; }
+  .section-body p { margin-bottom: 0.75rem; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-body strong { color: #2D2840; font-weight: 700; }
+
+  /* Zone cards */
+  .zones { display: flex; flex-direction: column; gap: 8px; margin: 1rem 0; }
+  .zone { border-radius: 10px; padding: 10px 14px; border: 1px solid transparent; }
+  .zone.fix { background: #EAF4EE; border-color: rgba(46,139,90,0.15); }
+  .zone.help { background: #FFF8E7; border-color: rgba(255,179,0,0.15); }
+  .zone.float { background: #EEEDF8; border-color: rgba(123,97,255,0.15); }
+  .zone-name { font-size: 12px; font-weight: 800; margin-bottom: 2px; }
+  .zone.fix .zone-name { color: #1A5C3A; }
+  .zone.help .zone-name { color: #B8700A; }
+  .zone.float .zone-name { color: #3A2E6E; }
+  .zone-desc { font-size: 12px; font-weight: 400; color: #7A7670; line-height: 1.5; }
+
+  /* Conversation starters */
+  .starters { display: flex; flex-direction: column; gap: 8px; margin: 1rem 0; }
+  .starter { background: #F5F4FF; border-radius: 10px; padding: 10px 14px; font-size: 13px; color: #3A2E6E; font-weight: 500; font-style: italic; line-height: 1.5; border-left: 3px solid #7B61FF; }
+
+  /* Do/Don't */
+  .do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 1rem 0; }
+  .do-card { background: #EAF4EE; border-radius: 10px; padding: 1rem; }
+  .dont-card { background: #FEF0F0; border-radius: 10px; padding: 1rem; }
+  .do-title { font-size: 12px; font-weight: 800; color: #1A5C3A; margin-bottom: 8px; }
+  .dont-title { font-size: 12px; font-weight: 800; color: #B71C1C; margin-bottom: 8px; }
+  .do-item, .dont-item { font-size: 12px; font-weight: 400; color: #7A7670; line-height: 1.6; margin-bottom: 4px; }
+
+  /* Resources */
+  .resource-list { display: flex; flex-direction: column; gap: 8px; margin: 1rem 0; }
+  .resource { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F5F2EE; border-radius: 10px; text-decoration: none; transition: background 0.15s; }
+  .resource:hover { background: #EDE8E2; }
+  .resource-icon { font-size: 20px; flex-shrink: 0; }
+  .resource-name { font-size: 13px; font-weight: 700; color: #2D2840; }
+  .resource-desc { font-size: 11px; font-weight: 400; color: #7A7670; }
+  .resource-arrow { margin-left: auto; font-size: 13px; color: #C0BCB7; }
+
+  /* Safety box */
+  .safety-box { background: #FFF8E7; border: 1px solid rgba(255,179,0,0.2); border-radius: 12px; padding: 1.25rem; margin: 1rem 0; }
+  .safety-title { font-size: 13px; font-weight: 800; color: #B8700A; margin-bottom: 6px; }
+  .safety-text { font-size: 12px; font-weight: 400; color: #7A7670; line-height: 1.6; }
+
+  /* Data box */
+  .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 1rem 0; }
+  .data-yes { background: #EAF4EE; border-radius: 8px; padding: 10px 12px; }
+  .data-no { background: #FEF0F0; border-radius: 8px; padding: 10px 12px; }
+  .data-title { font-size: 11px; font-weight: 800; margin-bottom: 6px; }
+  .data-yes .data-title { color: #1A5C3A; }
+  .data-no .data-title { color: #B71C1C; }
+  .data-item { font-size: 11px; font-weight: 400; color: #7A7670; line-height: 1.8; }
+
+  /* Footer */
+  .footer { text-align: center; padding-top: 2rem; font-size: 12px; color: #C0BCB7; font-weight: 400; }
+  .footer a { color: #7B61FF; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-brand">
+    <img src="zephyr-sprite.png" class="nav-logo" alt="Zephyr">
+    <span class="nav-name">Zephyr Cloud Lab™</span>
+  </a>
+  <a href="/" class="nav-back">← Back to Zephyr</a>
+</nav>
+
+<div class="wrap">
+
+  <!-- Hero -->
+  <div class="hero">
+    <span class="hero-emoji">👨‍👩‍👧</span>
+    <h1>The Grown-up's Guide to Zephyr</h1>
+    <p>Everything parents, carers, and teachers need to know — what Zephyr does, what it doesn't do, and how to get the most from it with your child.</p>
+  </div>
+
+  <!-- What is Zephyr -->
+  <div class="section">
+    <div class="section-card">
+      <div class="section-title">🐉 What is Zephyr Cloud Lab?</div>
+      <div class="section-body">
+        <p>Zephyr Cloud Lab is a free, gentle worry-sorting tool for children aged 5–10. A scientist dragon called Zephyr helps children sort their "worry clouds" into three zones — things they can fix, things they can help a bit, and things they need to let float away.</p>
+        <p>It takes about 5 minutes. It requires no account, no download, and stores nothing. It works on any device.</p>
+        <p><strong>It is a self-help tool, not a clinical treatment.</strong> It is designed to help children practise emotional literacy and develop healthy thinking habits — not to replace professional support.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- The three zones -->
+  <div class="section">
+    <div class="section-card">
+      <div class="section-title">☁️ The three zones — explained for grown-ups</div>
+      <div class="section-body">
+        <p>The framework comes from Stoic philosophy and modern CBT (Cognitive Behavioural Therapy). The idea is simple: not everything deserves the same energy.</p>
+      </div>
+      <div class="zones">
+        <div class="zone fix">
+          <div class="zone-name">🟢 Fix It Zone</div>
+          <div class="zone-desc">Things the child can actually do something about. Their choices, their actions, their responses. This is where energy belongs. <strong style="color:#1A5C3A">e.g. "Practise for my test" · "Say sorry to my friend"</strong></div>
+        </div>
+        <div class="zone help">
+          <div class="zone-name">🟡 Help a Bit Zone</div>
+          <div class="zone-desc">Things the child can partly influence but not control. They can contribute — then step back. <strong style="color:#B8700A">e.g. "Whether my friend forgives me" · "The weather on sports day"</strong></div>
+        </div>
+        <div class="zone float">
+          <div class="zone-name">🟣 Float Away Zone</div>
+          <div class="zone-desc">Things completely outside the child's control. Naming them as "not mine to carry" is genuinely healthy, not giving up. <strong style="color:#3A2E6E">e.g. "The news" · "What other people think" · "Things that already happened"</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How to talk about it -->
+  <div class="section">
+    <div class="section-card">
+      <div class="section-title">💬 How to talk about it afterwards</div>
+      <div class="section-body">
+        <p>You don't need to know what your child sorted — that's private. But these conversation starters can help open a gentle conversation:</p>
+      </div>
+      <div class="starters">
+        <div class="starter">"How did Zephyr go today? Did any of the clouds surprise you?"</div>
+        <div class="starter">"Was there anything that went in the Float Away zone? Sometimes that's the hardest one."</div>
+        <div class="starter">"You found something you can fix — what would be one tiny step you could take?"</div>
+        <div class="starter">"I noticed you seemed worried about something. You don't have to tell me — but I'm here if you want to."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Do and don't -->
+  <div class="section">
+    <div class="section-card">
+      <div class="section-title">✅ How to support your child</div>
+      <div class="do-dont">
+        <div class="do-card">
+          <div class="do-title">✓ Do</div>
+          <div class="do-item">✓ Use it together at first</div>
+          <div class="do-item">✓ Ask gentle questions after</div>
+          <div class="do-item">✓ Validate what they sorted</div>
+          <div class="do-item">✓ Let them lead the session</div>
+          <div class="do-item">✓ Notice patterns over time</div>
+          <div class="do-item">✓ Let Float Away be enough</div>
+        </div>
+        <div class="dont-card">
+          <div class="dont-title">✗ Don't</div>
+          <div class="dont-item">✗ Tell them they sorted wrong</div>
+          <div class="dont-item">✗ Demand to know the details</div>
+          <div class="dont-item">✗ Dismiss the Float Away zone</div>
+          <div class="dont-item">✗ Force it when they don't want to</div>
+          <div class="dont-item">✗ Use it as a punishment</div>
+          <div class="dont-item">✗ Expect it to fix everything</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Safety -->
+  <div class="section">
+    <div class="section-card">
+      <div class="section-title">🚨 Safety & crisis detection</div>
+      <div class="section-body">
+        <p>Zephyr includes automatic crisis detection. If a child types anything that suggests they might be in distress or danger, the app immediately shows a full-screen message with Childline and other support resources.</p>
+      </div>
+      <div class="safety-box">
+        <div class="safety-title">If your child shows signs of significant distress</div>
+        <div class="safety-text">Zephyr is not a crisis service. If you are concerned about your child's mental health or safety, please contact your GP, school SENCO, or one of the resources below. If there is an immediate risk, call 999.</div>
+      </div>
+      <div class="resource-list">
+        <a href="tel:08001111" class="resource">
+          <span class="resource-icon">☎️</span>
+          <div>
+            <div class="resource-name">Childline</div>
+            <div class="resource-desc">0800 1111 · Free · Just for children · 24/7</div>
+          </div>
+          <span class="resource-arrow">→</span>
+        </a>
+        <a href="https://www.youngminds.org.uk/parent" target="_blank" class="resource">
+          <span class="resource-icon">🧠</span>
+          <div>
+            <div class="resource-name">Young Minds — for parents</div>
+            <div class="resource-desc">youngminds.org.uk · Advice for worried parents</div>
+          </div>
+          <span class="resource-arrow">→</span>
+        </a>
+        <a href="tel:08088020400" class="resource">
+          <span class="resource-icon">📞</span>
+          <div>
+            <div class="resource-name">Young Minds Parent Helpline</div>
+            <div class="resource-desc">0808 802 0400 · Free · Mon–Fri 9:30am–4pm</div>
+          </div>
+          <span class="resource-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data & privacy -->
+  <div class="section">
+    <div class="section-card">
+      <div class="section-title">🔒 Privacy — what we collect and don't</div>
+      <div class="section-body">
+        <p>Zephyr is designed with children's privacy as the top priority.</p>
+      </div>
+      <div class="data-grid">
+        <div class="data-yes">
+          <div class="data-title">✓ We DO collect</div>
+          <div class="data-item">✓ Pages visited (anonymised)</div>
+          <div class="data-item">✓ Time on site (anonymised)</div>
+          <div class="data-item">✓ Country (not location)</div>
+        </div>
+        <div class="data-no">
+          <div class="data-title">✗ We NEVER collect</div>
+          <div class="data-item">✗ What your child types</div>
+          <div class="data-item">✗ Your child's name or age</div>
+          <div class="data-item">✗ Any personal information</div>
+          <div class="data-item">✗ Anything identifiable</div>
+        </div>
+      </div>
+      <div class="section-body" style="margin-top:10px">
+        <p>Your child's worries are completely private. We never see them. They are not stored anywhere. When the session ends, they are gone.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- For SEND children -->
+  <div class="section">
+    <div class="section-card" style="background:linear-gradient(135deg,#2D2840,#1E1A3A);border-color:rgba(123,97,255,0.2)">
+      <div class="section-title" style="color:#fff">🌟 For children with SEND needs</div>
+      <div class="section-body" style="color:rgba(255,255,255,0.65)">
+        <p>Zephyr works particularly well for children with autism, ADHD, anxiety, and other SEND needs because:</p>
+        <p>• <strong style="color:#fff">Structured & predictable</strong> — same experience every time<br>
+        • <strong style="color:#fff">Visual & concrete</strong> — clear categories, not abstract feelings<br>
+        • <strong style="color:#fff">No time pressure</strong> — children go at their own pace<br>
+        • <strong style="color:#fff">No social interaction required</strong> — private and self-directed<br>
+        • <strong style="color:#fff">Choice-based</strong> — most activities require only tapping, not typing</p>
+        <p>Voice support — where Zephyr reads everything aloud — is coming soon, which will make it fully accessible for non-readers.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <div class="section">
+    <div class="section-card">
+      <div class="section-title">ℹ️ About Zephyr Cloud Lab</div>
+      <div class="section-body">
+        <p>Zephyr Cloud Lab is part of <a href="https://circleofcontrol.co.uk" style="color:#7B61FF;text-decoration:none;font-weight:700">Circle of Control™</a> — a free mental clarity tool built on Stoic philosophy and CBT practice.</p>
+        <p>It was built by a teacher during one of the hardest periods of his life. Then he built a version for his son. Now it's used by children across the UK, US, Netherlands, Sweden and Canada.</p>
+        <p>It is completely free. It always will be.</p>
+        <p>Questions or feedback: <a href="mailto:hello@circleofcontrol.co.uk" style="color:#7B61FF;text-decoration:none;font-weight:700">hello@circleofcontrol.co.uk</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 Zephyr Cloud Lab™ / Circle of Control™ · <a href="https://circleofcontrol.co.uk/legal.html">Legal & Privacy</a></p>
+  </div>
+
+</div>
+</body>
+</html>
