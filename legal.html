@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal — Circle of Control™</title>
+<meta name="description" content="Terms of Use and Privacy Policy for Circle of Control.">
+<link rel="icon" type="image/png" sizes="32x32" href="icon-192.png">
+<link rel="shortcut icon" href="icon-192.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1A1814">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --c-bg: #F5F2EE; --c-surface: #FDFCFB;
+    --c-border: rgba(0,0,0,0.09); --c-border-strong: rgba(0,0,0,0.16);
+    --c-text: #1A1814; --c-muted: #7A7670; --c-faint: #C0BCB7;
+    --c-control: #1A5C3A; --c-control-bg: #EAF4EE;
+    --c-influence: #3A2E6E; --c-influence-bg: #EEEDF8;
+    --radius: 14px; --radius-sm: 8px; --max: 860px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--c-bg); color: var(--c-text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2rem; max-width: var(--max); margin: 0 auto; }
+  .nav-brand { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+  .brand-icon { width: 26px; height: 26px; border-radius: 50%; border: 1.5px solid var(--c-text); position: relative; flex-shrink: 0; }
+  .brand-icon::after { content: ''; position: absolute; inset: 5px; border-radius: 50%; border: 1px solid var(--c-text); }
+  .brand-name { font-family: 'DM Serif Display', serif; font-size: 17px; color: var(--c-text); }
+  .nav-cta { display: inline-flex; align-items: center; height: 38px; padding: 0 20px; background: var(--c-text); color: #fff; text-decoration: none; border-radius: var(--radius-sm); font-size: 13px; font-weight: 500; transition: opacity 0.15s; }
+  .nav-cta:hover { opacity: 0.82; }
+  .page-header { max-width: var(--max); margin: 0 auto; padding: 3rem 2rem 2rem; border-bottom: 1px solid var(--c-border); }
+  .page-header .section-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: var(--c-faint); margin-bottom: 1rem; display: block; }
+  .page-header h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
+  .page-header h1 em { font-style: italic; color: var(--c-muted); }
+  .page-meta { font-size: 13px; color: var(--c-faint); font-weight: 300; }
+  .toc { max-width: var(--max); margin: 0 auto; padding: 2rem; display: flex; gap: 12px; flex-wrap: wrap; }
+  .toc-pill { display: inline-flex; align-items: center; height: 34px; padding: 0 16px; background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 20px; font-size: 13px; font-weight: 400; color: var(--c-text); text-decoration: none; transition: border-color 0.15s; }
+  .toc-pill:hover { border-color: var(--c-border-strong); }
+  .legal-content { max-width: var(--max); margin: 0 auto; padding: 0 2rem 4rem; }
+  .legal-section { padding: 3rem 0; border-bottom: 1px solid var(--c-border); }
+  .legal-section:last-child { border-bottom: none; }
+  .legal-section-header { margin-bottom: 2rem; }
+  .legal-section-header .section-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: var(--c-faint); margin-bottom: 0.75rem; display: block; }
+  .legal-section-header h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; letter-spacing: -0.025em; line-height: 1.15; }
+  .legal-section-header h2 em { font-style: italic; color: var(--c-muted); }
+  .legal-section-header .effective { font-size: 12px; color: var(--c-faint); font-weight: 300; margin-top: 0.5rem; }
+  .clause { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius); padding: 1.5rem 1.75rem; margin-bottom: 12px; }
+  .clause h3 { font-size: 14px; font-weight: 500; margin-bottom: 0.6rem; color: var(--c-text); }
+  .clause p { font-size: 14px; color: var(--c-muted); font-weight: 300; line-height: 1.75; }
+  .clause p + p { margin-top: 0.75rem; }
+  .clause ul { list-style: none; margin-top: 0.75rem; display: flex; flex-direction: column; gap: 8px; }
+  .clause ul li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--c-muted); font-weight: 300; line-height: 1.6; }
+  .clause ul li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--c-faint); flex-shrink: 0; margin-top: 7px; }
+  .clause.highlight { background: var(--c-control-bg); border-color: rgba(46,139,90,0.2); }
+  .clause.highlight h3 { color: var(--c-control); }
+  .clause.caution { background: #FEF9EC; border-color: rgba(184,148,74,0.25); }
+  .clause.children { background: var(--c-influence-bg); border-color: rgba(107,95,214,0.2); }
+  .clause.children h3 { color: var(--c-influence); }
+  .copyright-banner { background: var(--c-text); border-radius: var(--radius); padding: 1.75rem 2rem; margin-bottom: 12px; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+  .copyright-icon { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.25); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .copyright-text h3 { font-size: 15px; font-weight: 500; color: #fff; margin-bottom: 3px; }
+  .copyright-text p { font-size: 13px; color: rgba(255,255,255,0.5); font-weight: 300; }
+  footer { border-top: 1px solid var(--c-border); padding: 1.75rem 2rem; max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--c-faint); flex-wrap: wrap; gap: 0.5rem; }
+  footer a { color: var(--c-faint); text-decoration: underline; text-underline-offset: 3px; }
+  footer a:hover { color: var(--c-muted); }
+  @media (max-width: 520px) { nav, .page-header, .toc, .legal-content, footer { padding-left: 1.25rem; padding-right: 1.25rem; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">
+    <div class="brand-icon"></div>
+    <span class="brand-name">Circle of Control™</span>
+  </a>
+  <a href="app.html" class="nav-cta">Try it now — free →</a>
+</nav>
+
+<div class="page-header">
+  <span class="section-tag">Legal</span>
+  <h1>Terms of Use <em>&amp; Privacy Policy</em></h1>
+  <p class="page-meta">Last updated: 17 May 2026 &nbsp;·&nbsp; circleofcontrol.co.uk</p>
+</div>
+
+<div class="toc">
+  <a href="#terms" class="toc-pill">Terms of Use</a>
+  <a href="#privacy" class="toc-pill">Privacy Policy</a>
+  <a href="#children" class="toc-pill">Children &amp; Zephyr</a>
+  <a href="#copyright" class="toc-pill">Copyright</a>
+</div>
+
+<div class="legal-content">
+
+  <!-- TERMS -->
+  <div class="legal-section" id="terms">
+    <div class="legal-section-header">
+      <span class="section-tag">Section 1</span>
+      <h2>Terms of <em>Use</em></h2>
+      <p class="effective">Effective date: 17 May 2026</p>
+    </div>
+
+    <div class="clause highlight">
+      <h3>About This Service</h3>
+      <p>Circle of Control is a web-based application operated by Circle of Control, accessible at circleofcontrol.co.uk. The Service provides tools to help users reflect on what they can and cannot control, drawing on Stoic and cognitive behavioural principles.</p>
+      <p>The Service includes two distinct products: <strong style="font-weight:500">Circle of Control</strong> — a mental clarity tool for adults and young people aged 13 and over — and <strong style="font-weight:500">Zephyr &amp; the Worry Clouds</strong> — a worry-sorting tool designed for children aged 5–10, intended to be used with parental or guardian supervision.</p>
+      <p>By accessing or using the Service, you agree to be bound by these Terms. If you do not agree, please do not use the Service.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Eligibility</h3>
+      <p><strong style="font-weight:500">Circle of Control</strong> is intended for users aged 13 and over. If you are under 18, you should have parental or guardian permission before using the Service.</p>
+      <p><strong style="font-weight:500">Zephyr &amp; the Worry Clouds</strong> is designed for children aged 5–10. It must be used under the supervision of a parent or guardian. Parents and guardians are responsible for ensuring the Service is used appropriately by children in their care. By allowing a child to use Zephyr, the parent or guardian agrees to these Terms on the child's behalf.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Free and Paid Features</h3>
+      <p>The Service offers both free and paid subscription features. Paid features are subject to the pricing displayed at the time of purchase. We reserve the right to change pricing with reasonable notice. All payments are processed by a third-party payment provider.</p>
+      <p>Subscription fees are non-refundable except where required by applicable law, including your statutory rights under UK consumer legislation.</p>
+      <p>Zephyr &amp; the Worry Clouds is free to use. No payment is required or requested from children or their parents to access Zephyr.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Acceptable Use</h3>
+      <p>You agree to use the Service only for lawful purposes. You must not:</p>
+      <ul>
+        <li>Attempt to gain unauthorised access to the Service or its underlying systems</li>
+        <li>Use the Service to transmit harmful, offensive, or unlawful content</li>
+        <li>Reverse engineer, scrape, or copy any part of the Service without permission</li>
+        <li>Impersonate any person or misrepresent your affiliation with any entity</li>
+        <li>Use the Service in any way that could damage, disable, or impair its operation</li>
+      </ul>
+    </div>
+
+    <div class="clause">
+      <h3>Intellectual Property</h3>
+      <p>All content, design, code, and materials within the Service — including the Zephyr character and Zephyr &amp; the Worry Clouds — are owned by or licensed to us. Nothing in these Terms grants you any ownership rights. You may use the Service for personal, non-commercial purposes only, unless expressly agreed otherwise in writing.</p>
+    </div>
+
+    <div class="clause caution">
+      <h3>Mental Health &amp; Wellbeing Disclaimer</h3>
+      <p>Circle of Control and Zephyr &amp; the Worry Clouds are reflective tools intended for personal development and emotional support only. They are not substitutes for professional medical advice, diagnosis, or treatment. If you or a child in your care is experiencing a mental health crisis, please contact a qualified healthcare professional or crisis service immediately.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Limitation of Liability</h3>
+      <p>To the fullest extent permitted by law, we exclude all liability for any loss or damage arising from your use of the Service. Our total liability shall not exceed the amount paid by you in the 12 months prior to the relevant claim. Nothing in these Terms limits liability for death or personal injury caused by negligence, fraud, or any liability that cannot be excluded under English law.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Governing Law</h3>
+      <p>These Terms are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Contact</h3>
+      <p>Questions about these Terms? Email: <a href="mailto:hello@circleofcontrol.co.uk" style="color:var(--c-text)">hello@circleofcontrol.co.uk</a></p>
+    </div>
+  </div>
+
+  <!-- PRIVACY -->
+  <div class="legal-section" id="privacy">
+    <div class="legal-section-header">
+      <span class="section-tag">Section 2</span>
+      <h2>Privacy <em>Policy</em></h2>
+      <p class="effective">Effective date: 17 May 2026</p>
+    </div>
+
+    <div class="clause">
+      <h3>Who We Are</h3>
+      <p>The data controller for the Service is Circle of Control, operating under the Circle of Control brand. We are committed to handling your data in accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.</p>
+      <p>For data-related enquiries: <a href="mailto:hello@circleofcontrol.co.uk" style="color:var(--c-text)">hello@circleofcontrol.co.uk</a></p>
+    </div>
+
+    <div class="clause">
+      <h3>What Data We Collect</h3>
+      <p><strong style="font-weight:500">Analytics data</strong> — we use analytics tools to understand how users interact with the Service. This may include pages visited, time on site, general geographic location (country or region only), device and browser type, and referring URL. Analytics data is aggregated or anonymised where possible and is not used to identify you personally.</p>
+      <p><strong style="font-weight:500">Account data</strong> — if you create an account, we store your email address and subscription status. Passwords are handled securely by our authentication provider and are never stored in plain text.</p>
+      <p><strong style="font-weight:500">Payment data</strong> — payment processing is handled entirely by a third-party provider. We do not store your card details. We may receive limited transaction metadata such as subscription status and transaction ID.</p>
+      <p><strong style="font-weight:500">Correspondence</strong> — if you contact us directly, we retain your correspondence to respond to your enquiry.</p>
+    </div>
+
+    <div class="clause highlight">
+      <h3>Nothing stored. Ever.</h3>
+      <p>The content you type into Circle of Control or Zephyr &amp; the Worry Clouds — your worries, thoughts, and session content — is never stored on our servers. Everything you type stays on your device. We do not read, process, or retain the personal content of any session.</p>
+    </div>
+
+    <div class="clause">
+      <h3>How We Use Your Data</h3>
+      <p>We use data to operate and improve the Service, understand usage patterns, manage paid subscriptions, respond to enquiries, and comply with legal obligations.</p>
+      <p>Our lawful basis for analytics is legitimate interest. Our lawful basis for account and payment data is performance of a contract.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Cookies &amp; Tracking</h3>
+      <p>We use cookies to support analytics. A cookie consent banner is shown on first visit — analytics cookies are only placed if you choose to accept. You can withdraw consent at any time by clearing your browser's local storage. You can also control cookies through your browser settings.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Third-Party Services</h3>
+      <p>We use the following third-party services: Google Analytics (usage analytics), Supabase (user authentication and account storage), Stripe (payment processing), EmailJS (contact form delivery), and Vercel (hosting infrastructure). Each is subject to their own privacy policies and appropriate data protection measures.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Your Rights</h3>
+      <p>Under UK GDPR you have the right to access, rectify, erase, restrict, port, and object to processing of your personal data. To exercise these rights, contact us at <a href="mailto:hello@circleofcontrol.co.uk" style="color:var(--c-text)">hello@circleofcontrol.co.uk</a>. We will respond within 30 days.</p>
+      <p>You also have the right to complain to the Information Commissioner's Office: <a href="https://ico.org.uk" target="_blank" style="color:var(--c-text)">ico.org.uk</a> · 0303 123 1113</p>
+    </div>
+
+    <div class="clause">
+      <h3>Data Security &amp; Retention</h3>
+      <p>We take reasonable technical and organisational measures to protect your data. Analytics data is retained per our provider's settings (typically 14 months). Account data is retained while your account is active. Payment records are retained for up to 7 years for legal compliance.</p>
+    </div>
+  </div>
+
+  <!-- CHILDREN -->
+  <div class="legal-section" id="children">
+    <div class="legal-section-header">
+      <span class="section-tag">Section 3</span>
+      <h2>Children <em>&amp; Zephyr</em></h2>
+      <p class="effective">Effective date: 17 May 2026</p>
+    </div>
+
+    <div class="clause children">
+      <h3>Zephyr &amp; the Worry Clouds — for children aged 5–10</h3>
+      <p>Zephyr &amp; the Worry Clouds is a worry-sorting tool designed specifically for children aged 5–10. It is part of the Circle of Control family of products and is accessible at circleofcontrol.co.uk/zephyr.html.</p>
+      <p>Zephyr is intended to be used by children with the knowledge and supervision of a parent or guardian. By allowing a child to use Zephyr, you confirm you are their parent or legal guardian and agree to these Terms on their behalf.</p>
+    </div>
+
+    <div class="clause children">
+      <h3>Children's Privacy</h3>
+      <p>We take children's privacy seriously. The following applies specifically to Zephyr &amp; the Worry Clouds:</p>
+      <ul>
+        <li>We do not collect, store, or share any personal data from children using Zephyr</li>
+        <li>Nothing a child types into Zephyr is stored on our servers — all content remains on their device only</li>
+        <li>We do not require children to create an account or provide any personal information to use Zephyr</li>
+        <li>Analytics cookies are subject to the same consent process as the rest of the Service — children should not interact with the cookie consent banner independently</li>
+        <li>Zephyr does not contain advertising, in-app purchases, or any commercial content directed at children</li>
+      </ul>
+    </div>
+
+    <div class="clause children">
+      <h3>Parental Controls &amp; Contact</h3>
+      <p>If you are a parent or guardian with questions or concerns about how Zephyr operates or how your child's data is handled, please contact us at <a href="mailto:hello@circleofcontrol.co.uk" style="color:var(--c-text)">hello@circleofcontrol.co.uk</a>. We will respond within 30 days.</p>
+      <p>If you believe a child has provided personal information without your consent, please contact us immediately and we will take steps to address it.</p>
+    </div>
+
+    <div class="clause caution">
+      <h3>Safeguarding Note</h3>
+      <p>Zephyr &amp; the Worry Clouds is a reflective tool only. It is not a substitute for professional support. If a child is showing signs of significant distress, anxiety, or emotional difficulty, please seek advice from a qualified professional — such as your GP, school SENCO, or a child mental health service.</p>
+    </div>
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="legal-section" id="copyright">
+    <div class="legal-section-header">
+      <span class="section-tag">Section 4</span>
+      <h2>Copyright <em>&amp; Ownership</em></h2>
+    </div>
+
+    <div class="copyright-banner">
+      <div class="copyright-icon">©</div>
+      <div class="copyright-text">
+        <h3>© 2026 Circle of Control™. All rights reserved.</h3>
+        <p>Operated by Circle of Control™ · circleofcontrol.co.uk</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <h3>All Rights Reserved</h3>
+      <p>All content, code, design, branding, copy, and materials on this website and within the Circle of Control and Zephyr &amp; the Worry Clouds applications — including the Zephyr character, name, and associated artwork — are the intellectual property of Circle of Control.</p>
+      <p>Unauthorised copying, modification, distribution, or use of any part of this Service — in whole or in part — is strictly prohibited without the express written permission of the copyright holder.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Permitted Use</h3>
+      <p>You are granted a limited, non-exclusive, non-transferable licence to access and use the Service for your own personal, non-commercial purposes. This licence does not include the right to reproduce, distribute, or create derivative works from any part of the Service.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Reporting Infringement</h3>
+      <p>If you believe any content on this site infringes your copyright, or if you become aware of unauthorised use of our content, please contact us at <a href="mailto:hello@circleofcontrol.co.uk" style="color:var(--c-text)">hello@circleofcontrol.co.uk</a>.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <span>
+    <a href="/">Home</a>
+    &nbsp;·&nbsp;
+    <a href="app.html">Open app</a>
+    &nbsp;·&nbsp;
+    <a href="https://zephyrcloudlab.co.uk">Zephyr</a>
+    &nbsp;·&nbsp;
+    <a href="legal.html">Legal</a>
+  </span>
+  <span>© 2026 Circle of Control™ · All rights reserved</span>
+</footer>
+
+<!-- Cookie consent -->
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1A1814;border-top:1px solid rgba(255,255,255,0.1);padding:1rem 2rem;font-family:'DM Sans',sans-serif">
+  <div style="max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+    <p style="font-size:13px;color:rgba(255,255,255,0.7);font-weight:300;line-height:1.5;margin:0;max-width:560px">We use cookies to understand how people use Circle of Control — nothing personal is ever stored in the app itself. <a href="legal.html" style="color:rgba(255,255,255,0.5);text-underline-offset:3px;text-decoration:underline">Privacy Policy</a></p>
+    <div style="display:flex;gap:8px;flex-shrink:0">
+      <button onclick="acceptCookies()" style="height:36px;padding:0 18px;background:#F5F2EE;color:#1A1814;border:none;border-radius:7px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer">Accept</button>
+      <button onclick="declineCookies()" style="height:36px;padding:0 18px;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);border:none;border-radius:7px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;cursor:pointer">Decline</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const c = localStorage.getItem('coc_cookie_consent');
+    if (c === 'accepted') loadGA();
+    else if (!c) setTimeout(() => { const b = document.getElementById('cookieBanner'); if(b) b.style.display='block'; }, 1500);
+  })();
+  function loadGA() {
+    if (window._gaLoaded) return; window._gaLoaded = true;
+    var s = document.createElement('script'); s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id=G-09WQ33PWNQ';
+    document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);} window.gtag=gtag;
+    gtag('js',new Date()); gtag('config','G-09WQ33PWNQ');
+  }
+  function acceptCookies() { localStorage.setItem('coc_cookie_consent','accepted'); document.getElementById('cookieBanner').style.display='none'; loadGA(); }
+  function declineCookies() { localStorage.setItem('coc_cookie_consent','declined'); document.getElementById('cookieBanner').style.display='none'; }
+
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/sw.js").catch(err => console.log("SW:", err));
+    });
+  }
+</script>
+</body>
+</html>
