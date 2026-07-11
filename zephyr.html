@@ -899,35 +899,53 @@
   // ── WORRIES ──
   const WORRIES = {
     school: { prompt: 'Which school worry cloud?', options: [
-      {emoji:'📝',text:'I have a test soon'},{emoji:'😬',text:'I got something wrong'},
-      {emoji:'🏃',text:'PE makes me nervous'},{emoji:'📖',text:'Reading out loud is scary'},
-      {emoji:'🤔',text:"I don't get the work"},{emoji:'🎒',text:'I forgot something'}]},
+      {emoji:'📝',text:'I have a test soon',symbol:'writing • exam • nervous'},
+      {emoji:'😬',text:'I got something wrong',symbol:'mistake • worried • school'},
+      {emoji:'🏃',text:'PE makes me nervous',symbol:'running • sport • scared'},
+      {emoji:'📖',text:'Reading out loud is scary',symbol:'reading • talking • class'},
+      {emoji:'🤔',text:"I don't get the work",symbol:'confused • learning • help'},
+      {emoji:'🎒',text:'I forgot something',symbol:'bag • forgot • school'}]},
     friends: { prompt: 'What friend worry?', options: [
-      {emoji:'😢',text:'Someone was mean to me'},{emoji:'🙁',text:'I feel left out'},
-      {emoji:'😡',text:'I had an argument'},{emoji:'🥺',text:"My friend won't play with me"},
-      {emoji:'😕',text:'Making friends is hard'},{emoji:'🤝',text:'I need to say sorry'}]},
+      {emoji:'😢',text:'Someone was mean to me',symbol:'hurt • unkind • bullying'},
+      {emoji:'🙁',text:'I feel left out',symbol:'alone • not included • sad'},
+      {emoji:'😡',text:'I had an argument',symbol:'angry • fight • fell out'},
+      {emoji:'🥺',text:"My friend won't play with me",symbol:'playing • rejected • lonely'},
+      {emoji:'😕',text:'Making friends is hard',symbol:'new • shy • nervous'},
+      {emoji:'🤝',text:'I need to say sorry',symbol:'sorry • apology • made up'}]},
     family: { prompt: 'What home worry?', options: [
-      {emoji:'😤',text:'Mum or Dad was cross with me'},{emoji:'😟',text:'Someone at home is ill'},
-      {emoji:'👶',text:'New baby coming'},{emoji:'💔',text:'I miss someone'},
-      {emoji:'🏠',text:'Things feel different at home'},{emoji:'🐾',text:"I'm worried about my pet"}]},
+      {emoji:'😤',text:'Mum or Dad was cross with me',symbol:'told off • upset • home'},
+      {emoji:'😟',text:'Someone at home is ill',symbol:'sick • poorly • worried'},
+      {emoji:'👶',text:'New baby coming',symbol:'baby • change • home'},
+      {emoji:'💔',text:'I miss someone',symbol:'missing • sad • away'},
+      {emoji:'🏠',text:'Things feel different at home',symbol:'change • unsettled • home'},
+      {emoji:'🐾',text:"I'm worried about my pet",symbol:'pet • animal • ill'}]},
     feelings: { prompt: 'Which big feeling?', options: [
-      {emoji:'😰',text:"I'm really nervous"},{emoji:'😭',text:'I feel really sad'},
-      {emoji:'😠',text:"I'm really angry"},{emoji:'😶',text:"I don't know why I feel bad"},
-      {emoji:'😨',text:'Something scares me'},{emoji:'🥴',text:'Everything is too much'}]},
+      {emoji:'😰',text:"I'm really nervous",symbol:'butterflies • shaky • worried'},
+      {emoji:'😭',text:'I feel really sad',symbol:'crying • unhappy • low'},
+      {emoji:'😠',text:"I'm really angry",symbol:'cross • furious • hot'},
+      {emoji:'😶',text:"I don't know why I feel bad",symbol:'confused • mixed up • empty'},
+      {emoji:'😨',text:'Something scares me',symbol:'frightened • scared • worried'},
+      {emoji:'🥴',text:'Everything is too much',symbol:'overwhelmed • too much • tired'}]},
     animals: { prompt: 'Animal worry?', options: [
-      {emoji:'🐕',text:"My dog/cat isn't well"},{emoji:'🐟',text:'My fish looks sick'},
-      {emoji:'🐇',text:"I'm worried about my rabbit"},{emoji:'🦎',text:'My reptile seems sad'},
-      {emoji:'🐾',text:'An animal got hurt'},{emoji:'🦜',text:'My bird is quiet'}]},
+      {emoji:'🐕',text:"My dog/cat isn't well",symbol:'pet • ill • worried'},
+      {emoji:'🐟',text:'My fish looks sick',symbol:'fish • tank • worried'},
+      {emoji:'🐇',text:"I'm worried about my rabbit",symbol:'rabbit • hutch • worried'},
+      {emoji:'🦎',text:'My reptile seems sad',symbol:'lizard • reptile • worried'},
+      {emoji:'🐾',text:'An animal got hurt',symbol:'injured • animal • sad'},
+      {emoji:'🦜',text:'My bird is quiet',symbol:'bird • quiet • worried'}]},
     other: { prompt: 'What else is worrying you?', options: [
-      {emoji:'🌍',text:'Something on the news'},{emoji:'🎮',text:'Missing out on something'},
-      {emoji:'⏰',text:'Worried about the future'},{emoji:'🌙',text:'Bad dreams'},
-      {emoji:'🔢',text:'Something seems unfair'},{emoji:'💭',text:'A thought that keeps coming'}]}
+      {emoji:'🌍',text:'Something on the news',symbol:'TV • world • scary news'},
+      {emoji:'🎮',text:'Missing out on something',symbol:'left out • FOMO • missing'},
+      {emoji:'⏰',text:'Worried about the future',symbol:'tomorrow • future • unknown'},
+      {emoji:'🌙',text:'Bad dreams',symbol:'nightmares • sleep • scared'},
+      {emoji:'🔢',text:'Something seems unfair',symbol:'unfair • not right • cross'},
+      {emoji:'💭',text:'A thought that keeps coming',symbol:'stuck thought • keeps returning'}]}
   };
 
   const ZONES = {
-    fix:   {icon:'🧪', label:'FIX IT\nZONE!',   cls:'fix',   tag:'Fix it!',   sound:'fix',   stars:3},
-    help:  {icon:'🔬', label:'HELP A\nBIT!',     cls:'help',  tag:'Help bit!', sound:'help',  stars:2},
-    float: {icon:'🎈', label:'LET IT\nFLOAT!',   cls:'float', tag:'Float!',   sound:'float', stars:2}
+    fix:   {icon:'🧪', label:'FIX IT\nZONE!',   cls:'fix',   tag:'Fix it!',   sound:'fix',   stars:3, picture:'✋ I can do something!', colour:'#2E8B5A'},
+    help:  {icon:'🔬', label:'HELP A\nBIT!',     cls:'help',  tag:'Help bit!', sound:'help',  stars:2, picture:'🤏 I can help a little', colour:'#B8700A'},
+    float: {icon:'🎈', label:'LET IT\nFLOAT!',   cls:'float', tag:'Float!',   sound:'float', stars:2, picture:'🌬️ I can let this go', colour:'#5B4FCF'}
   };
 
   const THINKING_MSGS = [
@@ -983,7 +1001,7 @@
     data.options.forEach(opt => {
       const card = document.createElement('div');
       card.className = 'worry-card';
-      card.innerHTML = `<span class="worry-emoji">${opt.emoji}</span><span class="worry-text">${opt.text}</span>`;
+      card.innerHTML = `<span class="worry-emoji">${opt.emoji}</span><span class="worry-text">${opt.text}</span>${opt.symbol ? `<span class="worry-symbol">${opt.symbol}</span>` : ''}`;
       card.onclick = () => selectWorry(opt.text, card);
       list.appendChild(card);
     });
