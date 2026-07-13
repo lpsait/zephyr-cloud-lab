@@ -1620,40 +1620,6 @@ Be enthusiastic, warm, use exclamation marks. Never scary. Always encouraging.`;
 
   /* ══ ZEPHYR VOICE ENGINE ══ */
   let voiceEnabled = false;
-  let zephyrVoice = null;
-
-  function loadVoices() {
-    const voices = window.speechSynthesis.getVoices();
-    const preferred = ['Google UK English Female', 'Microsoft Hazel', 'Samantha', 'Karen', 'Moira', 'Tessa'];
-    for (const name of preferred) {
-      const v = voices.find(v => v.name === name);
-      if (v) { zephyrVoice = v; break; }
-    }
-    if (!zephyrVoice) zephyrVoice = voices.find(v => v.lang.startsWith('en')) || voices[0];
-  }
-
-  if (window.speechSynthesis) {
-    window.speechSynthesis.onvoiceschanged = loadVoices;
-    loadVoices();
-  }
-
-  function zephyrSpeak(text, priority) {
-    if (!voiceEnabled || !window.speechSynthesis) return;
-    const clean = text.replace(/<[^>]+>/g, ' ').replace(/[\u{1F000}-\u{1FFFF}]/gu, '').replace(/\s+/g, ' ').trim();
-    if (!clean) return;
-    if (priority) window.speechSynthesis.cancel();
-    const utter = new SpeechSynthesisUtterance(clean);
-    utter.voice = zephyrVoice;
-    utter.rate = 0.88;
-    utter.pitch = 1.15;
-    utter.volume = 1;
-    window.speechSynthesis.speak(utter);
-  }
-
-  function stopSpeaking() {
-    if (window.speechSynthesis) window.speechSynthesis.cancel();
-  }
-
   function checkVoicePrompt() {
     const pref = localStorage.getItem('zeph_voice');
     if (pref === null) {
