@@ -483,6 +483,23 @@
 <img id="zephyrSprite" src="zephyr-sprite.png" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='inline')" style="display:none" alt="Zephyr">
 <div class="wrap">
 
+<!-- ══ VOICE PROMPT MODAL ══ -->
+<div id="voicePromptModal" style="display:none;position:fixed;inset:0;z-index:9997;background:rgba(26,24,20,0.85);padding:1.5rem;align-items:center;justify-content:center;backdrop-filter:blur(4px)">
+  <div style="background:#FDFCFB;border-radius:20px;padding:2rem 1.5rem;max-width:320px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.2)">
+    <div style="font-size:52px;margin-bottom:0.75rem">🔊🐉</div>
+    <div style="font-family:'Nunito',sans-serif;font-size:18px;font-weight:800;color:#2D2840;margin-bottom:0.5rem">Shall Zephyr read everything aloud?</div>
+    <p style="font-size:13px;color:#7A7670;font-weight:400;line-height:1.6;margin-bottom:1.25rem">Zephyr can speak all the words in a warm friendly voice — great for younger children and anyone who finds reading tricky.</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <button onclick="enableVoice()" style="height:48px;background:linear-gradient(135deg,#7B61FF,#9B85FF);color:white;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 4px 0 #5B41CF">Yes please! 🔊</button>
+      <button onclick="disableVoice()" style="height:44px;background:#F5F2EE;color:#7A7670;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;cursor:pointer">No thanks</button>
+    </div>
+  </div>
+</div>
+
+<!-- Voice toggle button -->
+<button id="voiceToggleBtn" onclick="toggleVoice()" style="display:none;position:fixed;top:12px;right:12px;z-index:999;width:40px;height:40px;border-radius:50%;border:none;background:rgba(123,97,255,0.15);cursor:pointer;font-size:18px;align-items:center;justify-content:center" title="Toggle Zephyr's voice">🔊</button>
+
+
 <!-- ══ ADD TO HOME SCREEN MODAL ══ -->
 <div id="installBanner" style="display:none;position:fixed;inset:0;z-index:9996;background:rgba(26,24,20,0.7);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:1.5rem">
   <div style="background:linear-gradient(160deg,#7B61FF,#9B85FF);border-radius:24px;padding:2rem 1.5rem;max-width:340px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(123,97,255,0.4)">
@@ -1637,8 +1654,46 @@ Be enthusiastic, warm, use exclamation marks. Never scary. Always encouraging.`;
   }
 
   function checkVoicePrompt() {
-    // Voice feature coming soon - disabled for now
+    const pref = localStorage.getItem('zeph_voice');
+    if (pref === null) {
+      const modal = document.getElementById('voicePromptModal');
+      if (modal) modal.style.display = 'flex';
+    } else {
+      voiceEnabled = pref === 'on';
+      updateVoiceBtn();
+    }
+  }
+
+  function enableVoice() {
+    voiceEnabled = true;
+    localStorage.setItem('zeph_voice', 'on');
+    document.getElementById('voicePromptModal').style.display = 'none';
+    updateVoiceBtn();
+    setTimeout(() => zephyrSpeak("Hello! I'm Sophie, Zephyr's voice. Let's sort some worry clouds together!", true), 300);
+  }
+
+  function disableVoice() {
     voiceEnabled = false;
+    localStorage.setItem('zeph_voice', 'off');
+    document.getElementById('voicePromptModal').style.display = 'none';
+    updateVoiceBtn();
+  }
+
+  function toggleVoice() {
+    voiceEnabled = !voiceEnabled;
+    localStorage.setItem('zeph_voice', voiceEnabled ? 'on' : 'off');
+    updateVoiceBtn();
+    if (voiceEnabled) zephyrSpeak("Voice is on! I'll read everything for you.", true);
+    else stopSpeaking();
+  }
+
+  function updateVoiceBtn() {
+    const btn = document.getElementById('voiceToggleBtn');
+    if (btn) {
+      btn.style.display = 'flex';
+      btn.textContent = voiceEnabled ? '🔊' : '🔇';
+      btn.style.background = voiceEnabled ? 'rgba(123,97,255,0.2)' : 'rgba(0,0,0,0.08)';
+    }
   }
 
   function enableVoice() {
