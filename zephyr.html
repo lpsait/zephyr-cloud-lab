@@ -1697,8 +1697,8 @@ Be enthusiastic, warm, use exclamation marks. Never scary. Always encouraging.`;
     localStorage.setItem('zeph_voice', 'on');
     document.getElementById('voicePromptModal').style.display = 'none';
     updateVoiceBtn();
-    // Don't auto-speak here — Safari blocks audio not triggered by direct tap
-    // Sophie will speak when user taps their first worry category
+    // Unlock audio context with this user tap, then auto-read welcome
+    zephyrSpeak("Welcome to Zephyr's Sky Lab! Tap a worry type to get started.", true);
   }
 
   function disableVoice() {
