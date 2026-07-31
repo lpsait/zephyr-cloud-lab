@@ -1059,7 +1059,7 @@ Be enthusiastic, warm, use exclamation marks. Never scary. Always encouraging.`;
     try {
       const res = await fetch(PROXY, {
         method: 'POST', headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({model:'claude-sonnet-4-20250514', max_tokens:250, system,
+        body: JSON.stringify({model:'claude-sonnet-4-6', max_tokens:250, system,
           messages:[{role:'user',content:`Sort this worry for a child: "${worry}"`}]})
       });
       const data = await res.json();
